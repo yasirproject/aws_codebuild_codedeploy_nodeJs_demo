@@ -14,7 +14,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - docker build -t 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v2.0 .
-      - docker tag cicd-yasir:v1.0 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v1.0      
+      #- docker tag cicd-yasir:v1.0 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v1.0      
   post_build:
     commands:
       - echo Build completed on `date`
