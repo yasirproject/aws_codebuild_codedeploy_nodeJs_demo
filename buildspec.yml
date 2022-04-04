@@ -13,13 +13,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v2.0 .
-      #- docker tag cicd-yasir:v1.0 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v1.0      
+      - docker build -t 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v3.0 .
+            
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v2.0
+      - docker push 678878256416.dkr.ecr.us-east-1.amazonaws.com/cicd-yasir:v3.0
       - echo Writing image definitions file...
       - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
